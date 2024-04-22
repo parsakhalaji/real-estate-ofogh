@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Signup.css";
 
 function Signup() {
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
     return (
         <div className="signup">
             <div className="container">
@@ -10,7 +14,7 @@ function Signup() {
                     <p className="signup__caption">
                         Please enter your data to sign up
                     </p>
-                    <form className="signup-form">
+                    <form onSubmit={signupHandler} className="signup-form">
                         <label className="signup__label" htmlFor="username">
                             Username
                             <input
@@ -18,6 +22,8 @@ function Signup() {
                                 type="username"
                                 name="username"
                                 id="username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
                             />
                         </label>
                         <label className="signup__label" htmlFor="email">
@@ -27,6 +33,8 @@ function Signup() {
                                 type="email"
                                 name="email"
                                 id="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </label>
                         <label className="signup__label" htmlFor="password">
@@ -36,8 +44,13 @@ function Signup() {
                                 type="password"
                                 name="password"
                                 id="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                             />
                         </label>
+                        <button className="btn signup__btn" type="submit">
+                            Submit
+                        </button>
                     </form>
                 </div>
             </div>
