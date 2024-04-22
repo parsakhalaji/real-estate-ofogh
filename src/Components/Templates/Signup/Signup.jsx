@@ -6,7 +6,20 @@ function Signup() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    
+    const signupSubmitHandler = (event) => {
+        event.preventDefault();
+        const newUser = { username, email, password };
+        fetch("http://localhost:4000/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newUser),
+        })
+            .then((res) => res.json())
+            .then((data) => console.log(data))
+            .catch((err) => console.log(err));
+    };
 
     return (
         <div className="signup">

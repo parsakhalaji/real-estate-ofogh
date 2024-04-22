@@ -1,4 +1,11 @@
 {
-    "users": [],
-    "houses": []
+  "users": [
+    {
+      "email": "parsa.khalaji@gmail.com",
+      "password": "$2a$10$Hqr6c7BxunahQve3OyR29eCcEM7oLi.AesUl10r3h7skZm3EzdKO.",
+      "username": "parsa",
+      "id": 1
+    }
+  ],
+  "houses": []
 }
