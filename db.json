@@ -5,6 +5,12 @@
       "password": "$2a$10$Hqr6c7BxunahQve3OyR29eCcEM7oLi.AesUl10r3h7skZm3EzdKO.",
       "username": "parsa",
       "id": 1
+    },
+    {
+      "email": "ali@gmail.com",
+      "password": "$2a$10$alXTIEW66HDU72.j9bLGi.gR8fa9Wuu4bVtEAHVH/XYHOislIknGq",
+      "username": "ali",
+      "id": 2
     }
   ],
   "houses": []

@@ -1,7 +1,31 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./Login.css";
+import UserContext from "../../../Contexts/User/UserContext";
 
 function Login() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const { user, setUser } = useContext(UserContext);
+
+    const loginSubmitHandler = (event) => {
+        event.preventDefault();
+        const userData = { email, password };
+        fetch("http://localhost:4000/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userData),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                setUser(data.user);
+            })
+            .catch((error) => console.log(error));
+    };
+
     return (
         <div className="login">
             <div className="container">
@@ -10,7 +34,7 @@ function Login() {
                     <p className="login__caption">
                         Please enter your email and password to login
                     </p>
-                    <form className="login-form">
+                    <form onSubmit={loginSubmitHandler} className="login-form">
                         <label className="login__label" htmlFor="email">
                             Email
                             <input
@@ -18,6 +42,8 @@ function Login() {
                                 type="email"
                                 name="email"
                                 id="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </label>
                         <label className="login__label" htmlFor="password">
@@ -27,8 +53,11 @@ function Login() {
                                 type="password"
                                 name="password"
                                 id="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                             />
                         </label>
+                        <button className="btn login__btn">Submit</button>
                     </form>
                 </div>
             </div>
