@@ -6,6 +6,7 @@ function Signup() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    
 
     return (
         <div className="signup">
@@ -15,7 +16,10 @@ function Signup() {
                     <p className="signup__caption">
                         Please enter your data to sign up
                     </p>
-                    <form onSubmit={signupSubmitHandler} className="signup-form">
+                    <form
+                        onSubmit={signupSubmitHandler}
+                        className="signup-form"
+                    >
                         <label className="signup__label" htmlFor="username">
                             Username
                             <input
