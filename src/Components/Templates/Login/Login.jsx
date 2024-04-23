@@ -23,6 +23,8 @@ function Login() {
             .then((data) => {
                 console.log(data);
                 setUser(data.user);
+                setEmail("");
+                setPassword("");
             })
             .catch((error) => console.log(error));
     };
