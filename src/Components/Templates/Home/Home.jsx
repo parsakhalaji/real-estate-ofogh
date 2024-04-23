@@ -49,12 +49,17 @@ function Home() {
                         </ul>
                         <div className="home__btns">
                             <button
+                                disabled={currentPage === 1}
                                 onClick={previousPageHandler}
                                 className="btn"
                             >
                                 Previous
                             </button>
-                            <button onClick={nextPageHandler} className="btn">
+                            <button
+                                disabled={currentPage === totalPages}
+                                onClick={nextPageHandler}
+                                className="btn"
+                            >
                                 Next
                             </button>
                         </div>
