@@ -60,7 +60,9 @@ function Login() {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </label>
-                        <button className="btn login__btn">Submit</button>
+                        <button disabled={user} className="btn login__btn">
+                            Submit
+                        </button>
                         {user && (
                             <Link className="btn" to="/addnewhouse">
                                 Add new house
