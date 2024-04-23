@@ -1,11 +1,20 @@
-import React from 'react'
+import React from "react";
 
-function HouseCard() {
-  return (
-    <div className="house-card">
-        
-    </div>
-  )
+function HouseCard({ address }) {
+    return (
+        <div className="house-card">
+            <div className="house-card__img-container">
+                <img
+                    src="./Images/house.jpeg"
+                    alt=""
+                    className="house-card__img"
+                />
+            </div>
+            <div className="house-card__content">
+                <h3 className="house-card__address">{address}</h3>
+            </div>
+        </div>
+    );
 }
 
-export default HouseCard
+export default HouseCard;
