@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HouseCard from "../../Modules/HouseCard/HouseCard";
+import "./Home.css";
 
 function Home() {
     const [houses, setHouses] = useState([]);
