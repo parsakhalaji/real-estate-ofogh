@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./Login.css";
 import UserContext from "../../../Contexts/User/UserContext";
+import { Link } from "react-router-dom";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -58,6 +59,11 @@ function Login() {
                             />
                         </label>
                         <button className="btn login__btn">Submit</button>
+                        {user && (
+                            <Link className="btn" to="/addnewhouse">
+                                Add new house
+                            </Link>
+                        )}
                     </form>
                 </div>
             </div>
