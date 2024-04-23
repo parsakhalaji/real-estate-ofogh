@@ -1,4 +1,5 @@
 import { MapContainer, TileLayer } from "react-leaflet";
+import "./SelectLocation.css";
 
 function SelectLocation() {
     return (
