@@ -8,28 +8,32 @@ import UserContext from "./Contexts/User/UserContext";
 import { useState } from "react";
 import PrivateRoute from "./privateRoute/PrivateRoute";
 import AddNewHouse from "./Components/Templates/AddNewHouse/AddNewHouse";
+import LocationContext from "./Contexts/Location/LocationContext";
 
 function App() {
     const [user, setUser] = useState(null);
+    const [location, setLocation] = useState(null);
 
     return (
         <>
-            <UserContext.Provider value={{ user, setUser }}>
-                <Navbar />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route
-                        path="/addnewhouse"
-                        element={
-                            <PrivateRoute>
-                                <AddNewHouse />
-                            </PrivateRoute>
-                        }
-                    />
-                </Routes>
-            </UserContext.Provider>
+            <LocationContext.Provider value={{ location, setLocation }}>
+                <UserContext.Provider value={{ user, setUser }}>
+                    <Navbar />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/signup" element={<Signup />} />
+                        <Route
+                            path="/addnewhouse"
+                            element={
+                                <PrivateRoute>
+                                    <AddNewHouse />
+                                </PrivateRoute>
+                            }
+                        />
+                    </Routes>
+                </UserContext.Provider>
+            </LocationContext.Provider>
         </>
     );
 }
