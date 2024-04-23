@@ -1,6 +1,6 @@
 import React from "react";
 
-function HouseCard({ address }) {
+function HouseCard({ data }) {
     return (
         <div className="house-card">
             <div className="house-card__img-container">
@@ -11,7 +11,7 @@ function HouseCard({ address }) {
                 />
             </div>
             <div className="house-card__content">
-                <h3 className="house-card__address">{address}</h3>
+                <h3 className="house-card__address">{data.address}</h3>
             </div>
         </div>
     );

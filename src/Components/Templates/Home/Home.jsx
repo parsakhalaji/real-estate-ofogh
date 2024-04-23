@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import HouseCard from "../../Modules/HouseCard/HouseCard";
 
 function Home() {
     const [houses, setHouses] = useState([]);
@@ -21,7 +22,6 @@ function Home() {
             .then((data) => {
                 const totalHouses = data.length;
                 setTotalPages(Math.ceil(totalHouses / 4));
-                console.log("total pages: ", totalPages);
             });
     }, [houses]);
 
@@ -41,7 +41,9 @@ function Home() {
                     <div className="home__content">
                         <ul className="home__houses">
                             {houses.map((house) => (
-                                <li className="home__house">{house.id}</li>
+                                <li className="home__house">
+                                    <HouseCard data={house} />
+                                </li>
                             ))}
                         </ul>
                         <div className="home__btns">
