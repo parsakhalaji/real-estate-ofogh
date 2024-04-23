@@ -13,5 +13,36 @@
       "id": 2
     }
   ],
-  "houses": []
+  "houses": [
+    {
+      "phoneNumber": "09102206148",
+      "address": "tehran",
+      "desc": "a house",
+      "location": {
+        "lat": 35.70386830932186,
+        "lng": 51.389665603637695
+      },
+      "id": 2
+    },
+    {
+      "phoneNumber": "09217484382",
+      "address": "shiraz",
+      "desc": "a house in shiraz",
+      "location": {
+        "lat": 35.70386830932186,
+        "lng": 51.389665603637695
+      },
+      "id": 3
+    },
+    {
+      "phoneNumber": "09102206148",
+      "address": "tabriz",
+      "desc": "a house in tabriz",
+      "location": {
+        "lat": 35.70386830932186,
+        "lng": 51.389665603637695
+      },
+      "id": 4
+    }
+  ]
 }
