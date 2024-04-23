@@ -168,7 +168,8 @@ a {
     cursor: pointer;
 }
 .btn:disabled {
-    opacity: .8;
+    opacity: 0.5;
+    cursor: default;
 }
 
 /* Container */
