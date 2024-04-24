@@ -9,6 +9,7 @@ import { useState } from "react";
 import PrivateRoute from "./privateRoute/PrivateRoute";
 import AddNewHouse from "./Components/Templates/AddNewHouse/AddNewHouse";
 import LocationContext from "./Contexts/Location/LocationContext";
+import SingleHouse from "./Components/Templates/SingleHouse/SingleHouse";
 
 function App() {
     const [user, setUser] = useState(null);
@@ -33,7 +34,7 @@ function App() {
                         />
                         <Route
                             path="/houses/:houseID"
-                            element={<h1>singleHouse</h1>}
+                            element={<SingleHouse />}
                         />
                     </Routes>
                 </UserContext.Provider>
