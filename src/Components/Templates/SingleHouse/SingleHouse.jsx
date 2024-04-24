@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ShowLocation from "../../Modules/Location/ShowLocation";
-import "./SingleHouse.css"
+import "./SingleHouse.css";
+import DeleteConfirm from "../../Modules/DeleteConfirm/DeleteConfirm";
 
 function SingleHouse() {
     const { houseID } = useParams();
     const [currentHouse, setCurrentHouse] = useState(null);
+    const [isDeleteConfirmOpen, setIsDeleteConfirmOpen] = useState(false);
     useEffect(() => {
         fetch(`http://localhost:4000/houses/${houseID}`)
             .then((res) => res.json())
@@ -15,6 +17,11 @@ function SingleHouse() {
             })
             .catch((err) => console.log(err));
     }, [houseID]);
+
+    const openDeleteConfirmHandler = () => {
+        setIsDeleteConfirmOpen(true);
+    };
+
     return (
         <div className="container">
             <div className="single-house">
@@ -36,9 +43,12 @@ function SingleHouse() {
                 </div>
                 <div className="single-house__btns">
                     <button className="btn">Edit</button>
-                    <button className="btn">Delete</button>
+                    <button onClick={openDeleteConfirmHandler} className="btn">
+                        Delete
+                    </button>
                 </div>
             </div>
+            {isDeleteConfirmOpen && <DeleteConfirm />}
         </div>
     );
 }

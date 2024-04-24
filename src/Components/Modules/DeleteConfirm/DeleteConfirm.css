@@ -1,0 +1,29 @@
+.deletebox {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, .5);
+}
+.deletebox__wrapper {
+    background-color: rgb(187, 73, 84);
+    padding: 3rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.deletebox__title {
+    font-size: 2rem;
+}
+.deletebox__btns {
+    display: flex;
+    gap: 2rem;
+}
