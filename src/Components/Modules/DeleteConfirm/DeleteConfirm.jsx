@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DeleteConfirm.css";
 
-function DeleteConfirm() {
+function DeleteConfirm({ isOpen, openBoxHandler, onSubmit }) {
+    const [isBoxOpen, setIsBoxOpen] = useState(isOpen);
+
+    const closeBoxHandler = () => {
+        openBoxHandler(false);
+    };
     return (
-        <div className="deletebox">
+        <div
+            className="deletebox"
+            style={{ display: isOpen ? "flex" : "none" }}
+        >
             <div className="deletebox__wrapper">
                 <h2 className="deletebox__title">
                     Are you sure to delete this house?
                 </h2>
                 <div className="deletebox__btns">
-                    <button className="btn">Yes, Delete</button>
-                    <button className="btn">No</button>
+                    <button onClick={onSubmit} className="btn">
+                        Yes, Delete
+                    </button>
+                    <button onClick={closeBoxHandler} className="btn">
+                        No
+                    </button>
                 </div>
             </div>
         </div>

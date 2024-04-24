@@ -15,16 +15,6 @@
   ],
   "houses": [
     {
-      "phoneNumber": "09102206148",
-      "address": "tehran",
-      "desc": "a house",
-      "location": {
-        "lat": 35.70386830932186,
-        "lng": 51.389665603637695
-      },
-      "id": 1
-    },
-    {
       "phoneNumber": "09217484382",
       "address": "shiraz",
       "desc": "a house in shiraz",
@@ -43,16 +33,6 @@
         "lng": 51.389665603637695
       },
       "id": 3
-    },
-    {
-      "phoneNumber": "09102206148",
-      "address": "tehran",
-      "desc": "a house",
-      "location": {
-        "lat": 35.70386830932186,
-        "lng": 51.389665603637695
-      },
-      "id": 4
     },
     {
       "phoneNumber": "09217484382",
@@ -133,7 +113,8 @@
         "lng": 51.389665603637695
       },
       "id": 12
-    },{
+    },
+    {
       "phoneNumber": "09102206148",
       "address": "tehran",
       "desc": "a house",
@@ -192,6 +173,26 @@
         "lng": 51.389665603637695
       },
       "id": 18
+    },
+    {
+      "phoneNumber": "09102206148",
+      "address": "tabriz",
+      "desc": "this is a house in tabriz",
+      "location": {
+        "lat": 35.7335542582977,
+        "lng": 51.396446228027344
+      },
+      "id": 19
+    },
+    {
+      "phoneNumber": "09102206148",
+      "address": "punak",
+      "desc": "this is a house in punak",
+      "location": {
+        "lat": 35.69062453129277,
+        "lng": 51.39464378356934
+      },
+      "id": 20
     }
   ]
 }

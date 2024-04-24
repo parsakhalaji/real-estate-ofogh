@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ShowLocation from "../../Modules/Location/ShowLocation";
 import "./SingleHouse.css";
 import DeleteConfirm from "../../Modules/DeleteConfirm/DeleteConfirm";
@@ -8,6 +8,9 @@ function SingleHouse() {
     const { houseID } = useParams();
     const [currentHouse, setCurrentHouse] = useState(null);
     const [isDeleteConfirmOpen, setIsDeleteConfirmOpen] = useState(false);
+
+    const navigate = useNavigate();
+
     useEffect(() => {
         fetch(`http://localhost:4000/houses/${houseID}`)
             .then((res) => res.json())
@@ -20,6 +23,18 @@ function SingleHouse() {
 
     const openDeleteConfirmHandler = () => {
         setIsDeleteConfirmOpen(true);
+    };
+
+    const deleteHouseHandler = () => {
+        fetch(`http://localhost:4000/houses/${houseID}`, {
+            method: "DELETE",
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                alert("The house deleted successfully");
+                navigate("/");
+            })
+            .catch((err) => console.log(err));
     };
 
     return (
@@ -48,7 +63,11 @@ function SingleHouse() {
                     </button>
                 </div>
             </div>
-            {isDeleteConfirmOpen && <DeleteConfirm />}
+            <DeleteConfirm
+                onSubmit={deleteHouseHandler}
+                isOpen={isDeleteConfirmOpen}
+                openBoxHandler={setIsDeleteConfirmOpen}
+            />
         </div>
     );
 }
