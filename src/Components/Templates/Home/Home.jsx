@@ -42,7 +42,7 @@ function Home() {
                     <div className="home__content">
                         <ul className="home__houses">
                             {houses.map((house) => (
-                                <li className="home__house">
+                                <li key={house.id} className="home__house">
                                     <HouseCard data={house} />
                                 </li>
                             ))}
