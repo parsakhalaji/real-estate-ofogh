@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ShowLocation from "../../Modules/Location/ShowLocation";
 
 function SingleHouse() {
     const { houseID } = useParams();
@@ -13,8 +14,13 @@ function SingleHouse() {
             });
     }, []);
     return (
-        <div className="single-house">
-            <h2></h2>
+        <div className="container">
+            <div className="single-house">
+                <div className="single-house__info">
+                    <div className="single-house__details"></div>
+                    <ShowLocation />
+                </div>
+            </div>
         </div>
     );
 }
