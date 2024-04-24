@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ShowLocation from "../../Modules/Location/ShowLocation";
+import "./SingleHouse.css"
 
 function SingleHouse() {
     const { houseID } = useParams();
