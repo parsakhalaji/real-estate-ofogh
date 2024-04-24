@@ -11,13 +11,15 @@ let DefaultIcon = L.icon({
 
 function ShowLocation({ location }) {
     return (
-        <MapContainer center={[location.lat, location.lng]} zoom={20}>
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker
-                position={[location.lat, location.lng]}
-                icon={DefaultIcon}
-            ></Marker>
-        </MapContainer>
+        <div className="select-location__wrapper">
+            <MapContainer center={[location.lat, location.lng]} zoom={20}>
+                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                <Marker
+                    position={[location.lat, location.lng]}
+                    icon={DefaultIcon}
+                ></Marker>
+            </MapContainer>
+        </div>
     );
 }
 
