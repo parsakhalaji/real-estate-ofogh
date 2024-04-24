@@ -11,14 +11,31 @@ function SingleHouse() {
             .then((data) => {
                 console.log(data);
                 setCurrentHouse(data);
-            });
-    }, []);
+            })
+            .catch((err) => console.log(err));
+    }, [houseID]);
     return (
         <div className="container">
             <div className="single-house">
                 <div className="single-house__info">
-                    <div className="single-house__details"></div>
-                    <ShowLocation />
+                    <div className="single-house__details">
+                        <h3 className="single-house__address">
+                            {currentHouse?.address}
+                        </h3>
+                        <h3 className="single-house__desc">
+                            {currentHouse?.desc}
+                        </h3>
+                        <h3 className="single-house__phoneNumber">
+                            {currentHouse?.phoneNumber}
+                        </h3>
+                    </div>
+                    {currentHouse && (
+                        <ShowLocation location={currentHouse.location} />
+                    )}
+                </div>
+                <div className="single-house__btns">
+                    <button className="btn">Edit</button>
+                    <button className="btn">Delete</button>
                 </div>
             </div>
         </div>
