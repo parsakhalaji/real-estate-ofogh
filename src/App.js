@@ -31,6 +31,10 @@ function App() {
                                 </PrivateRoute>
                             }
                         />
+                        <Route
+                            path="/houses/:houseID"
+                            element={<h1>singleHouse</h1>}
+                        />
                     </Routes>
                 </UserContext.Provider>
             </LocationContext.Provider>
