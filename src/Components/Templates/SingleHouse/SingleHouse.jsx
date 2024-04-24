@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 function SingleHouse() {
     const { houseID } = useParams();
-    const [currenHouse, setCurrentHouse] = useState(null);
+    const [currentHouse, setCurrentHouse] = useState(null);
     useEffect(() => {
         fetch(`http://localhost:4000/houses/${houseID}`)
             .then((res) => res.json())
