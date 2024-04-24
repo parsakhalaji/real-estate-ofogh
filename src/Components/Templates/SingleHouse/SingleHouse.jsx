@@ -68,6 +68,7 @@ function SingleHouse() {
                 isOpen={isDeleteConfirmOpen}
                 openBoxHandler={setIsDeleteConfirmOpen}
             />
+            
         </div>
     );
 }
