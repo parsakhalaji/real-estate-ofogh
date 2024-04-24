@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import ShowLocation from "../../Modules/Location/ShowLocation";
 import "./SingleHouse.css";
 import DeleteConfirm from "../../Modules/DeleteConfirm/DeleteConfirm";
+import EditHouseDialog from "../../Modules/EditHouseDialog/EditHouseDialog";
 
 function SingleHouse() {
     const { houseID } = useParams();
@@ -68,7 +69,9 @@ function SingleHouse() {
                 isOpen={isDeleteConfirmOpen}
                 openBoxHandler={setIsDeleteConfirmOpen}
             />
-            
+            <EditHouseDialog
+                
+            />
         </div>
     );
 }
