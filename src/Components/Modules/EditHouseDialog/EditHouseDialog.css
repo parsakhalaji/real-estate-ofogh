@@ -56,3 +56,69 @@
     gap: 2rem;
     padding: 3rem;
 }
+
+@media screen and (max-width: 768px) {
+    .editdialog {
+        display: block;
+        position: static;
+        top: auto;
+        right: auto;
+        left: auto;
+        bottom: auto;
+        background: none;
+    }
+    .editdialog__wrapper {
+        background-color: #ccae62;
+        padding: 0;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        padding: 3rem 0;
+    }
+    .edithouse {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .edithouse__title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    .edithouse__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        gap: 1rem;
+        order: 99;
+    }
+    .edithouse__label {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        gap: 0.5rem;
+    }
+    .edithouse__input {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        outline: none;
+        border: none;
+    }
+    .edithouse__location {
+    }
+    .edithouse__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 0;
+    }
+    .select-location__wrapper {
+        width: 30rem;
+    }
+}
