@@ -13,9 +13,7 @@ function HouseCard({ data }) {
                         className="house-card__img"
                     />
                 </div>
-                <div className="house-card__content">
-                    <h3 className="house-card__address">{data.address}</h3>
-                </div>
+                <h3 className="house-card__address">{data.address}</h3>
             </div>
         </Link>
     );
