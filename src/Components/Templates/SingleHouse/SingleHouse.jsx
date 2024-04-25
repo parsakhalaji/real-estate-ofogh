@@ -9,6 +9,7 @@ function SingleHouse() {
     const { houseID } = useParams();
     const [currentHouse, setCurrentHouse] = useState(null);
     const [isDeleteConfirmOpen, setIsDeleteConfirmOpen] = useState(false);
+    const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
 
     const navigate = useNavigate();
 
@@ -16,7 +17,7 @@ function SingleHouse() {
         fetch(`http://localhost:4000/houses/${houseID}`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 setCurrentHouse(data);
             })
             .catch((err) => console.log(err));
@@ -26,6 +27,10 @@ function SingleHouse() {
         setIsDeleteConfirmOpen(true);
     };
 
+    const openEditDialogHandler = () => {
+        setIsEditDialogOpen(true);
+    };
+
     const deleteHouseHandler = () => {
         fetch(`http://localhost:4000/houses/${houseID}`, {
             method: "DELETE",
@@ -33,6 +38,25 @@ function SingleHouse() {
             .then((res) => res.json())
             .then((data) => {
                 alert("The house deleted successfully");
+                navigate("/");
+            })
+            .catch((err) => console.log(err));
+    };
+
+    const editHouseHandler = (e, newHouseData) => {
+        e.preventDefault();
+        // console.log("newHouseData: ", newHouseData);
+        fetch(`http://localhost:4000/houses/${houseID}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newHouseData),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                // console.log(data);
+                alert("The house info updated successfully");
                 navigate("/");
             })
             .catch((err) => console.log(err));
@@ -58,7 +82,9 @@ function SingleHouse() {
                     )}
                 </div>
                 <div className="single-house__btns">
-                    <button className="btn">Edit</button>
+                    <button onClick={openEditDialogHandler} className="btn">
+                        Edit
+                    </button>
                     <button onClick={openDeleteConfirmHandler} className="btn">
                         Delete
                     </button>
@@ -69,9 +95,14 @@ function SingleHouse() {
                 isOpen={isDeleteConfirmOpen}
                 openBoxHandler={setIsDeleteConfirmOpen}
             />
-            <EditHouseDialog
-                
-            />
+            {currentHouse && (
+                <EditHouseDialog
+                    isOpen={isEditDialogOpen}
+                    onSubmit={editHouseHandler}
+                    openBoxHandler={setIsEditDialogOpen}
+                    initialHouseData={currentHouse}
+                />
+            )}
         </div>
     );
 }
