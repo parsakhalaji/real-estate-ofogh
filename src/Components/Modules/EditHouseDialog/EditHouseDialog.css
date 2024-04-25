@@ -120,5 +120,7 @@
     }
     .select-location__wrapper {
         width: 30rem;
+        flex-grow: 1
+        ;
     }
 }
