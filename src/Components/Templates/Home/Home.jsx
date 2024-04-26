@@ -12,7 +12,7 @@ function Home() {
             .then((res) => res.json())
             .then((data) => {
                 setHouses(data);
-                console.log("data: ", data);
+                // console.log("data: ", data);
             })
             .catch((err) => console.log(err));
     }, [currentPage]);
