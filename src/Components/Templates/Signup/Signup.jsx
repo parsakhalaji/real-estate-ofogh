@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./Signup.css";
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const navigate = useNavigate();
 
     const signupSubmitHandler = (event) => {
         event.preventDefault();
@@ -17,7 +20,15 @@ function Signup() {
             body: JSON.stringify(newUser),
         })
             .then((res) => res.json())
-            .then((data) => console.log(data))
+            .then((data) => {
+                console.log(data);
+                if (typeof data === "string") {
+                    alert(data);
+                } else {
+                    alert("you have signed up successfully");
+                    navigate("/login");
+                }
+            })
             .catch((err) => console.log(err));
     };
 
