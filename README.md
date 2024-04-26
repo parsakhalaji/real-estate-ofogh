@@ -16,12 +16,10 @@ This is a React application for managing real estate listings. Users can registe
 
 To run the server which utilizes `json-server` for a fake REST API, execute:
 
-```bash
 node server.js
 
 ### Running the App
 
 To start the React application, use:
 
-```bash
 npm start
