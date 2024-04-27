@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ShowLocation from "../../Modules/Location/ShowLocation";
 import "./SingleHouse.css";
 import DeleteConfirm from "../../Modules/DeleteConfirm/DeleteConfirm";
 import EditHouseDialog from "../../Modules/EditHouseDialog/EditHouseDialog";
+import LocationContext from "../../../Contexts/Location/LocationContext";
 
 function SingleHouse() {
     const { houseID } = useParams();
     const [currentHouse, setCurrentHouse] = useState(null);
     const [isDeleteConfirmOpen, setIsDeleteConfirmOpen] = useState(false);
     const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
-
+    const { location } = useContext(LocationContext);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -51,7 +52,7 @@ function SingleHouse() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(newHouseData),
+            body: JSON.stringify({ ...newHouseData, location }),
         })
             .then((res) => res.json())
             .then((data) => {
