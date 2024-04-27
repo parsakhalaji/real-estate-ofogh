@@ -84,7 +84,7 @@ function AddNewHouse() {
                         </button>
                     </form>
                     <div className="addnewhouse__location">
-                        <SelectLocation />
+                        <SelectLocation centerLocation={[35.6892, 51.389]} />
                     </div>
                 </div>
             </div>
