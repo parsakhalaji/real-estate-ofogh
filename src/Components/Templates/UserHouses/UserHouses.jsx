@@ -24,7 +24,7 @@ function Home() {
         <div className="container">
             <div className="home">
                 {!houses.length ? (
-                    <h1 className="home__notFound">No house found</h1>
+                    <h1 className="home__notFound">You have not added any houses yet :((</h1>
                 ) : (
                     <div className="home__content">
                         <ul className="home__houses">
