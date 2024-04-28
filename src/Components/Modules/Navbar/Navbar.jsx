@@ -38,7 +38,11 @@ function Navbar() {
                 <div className="navbar__wrapper">
                     <div className="navbar__left">
                         <div onClick={closeMenu} className="navbar__logo">
-                            <Link to="/">LOGO</Link>
+                            {user ? (
+                                <div>You: {`${user.username}`}</div>
+                            ) : (
+                                <Link to="/">LOGO</Link>
+                            )}
                         </div>
                     </div>
                     <div className="navbar__right">
@@ -70,9 +74,6 @@ function Navbar() {
                                 </li>
                                 {user ? (
                                     <>
-                                        <li className="navbar-menu__item">
-                                            You: {user.username}
-                                        </li>
                                         <li
                                             onClick={closeMenu}
                                             className="navbar-menu__item"
