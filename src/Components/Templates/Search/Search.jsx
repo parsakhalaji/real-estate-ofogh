@@ -5,12 +5,10 @@ import { useParams } from "react-router-dom";
 
 function Search() {
     const [houses, setHouses] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(1);
     const { searchParam } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:4000/houses?_limit=4&_page=${currentPage}`)
+        fetch(`http://localhost:4000/houses`)
             .then((res) => res.json())
             .then((data) => {
                 const targetHouses = data.filter(
@@ -23,23 +21,7 @@ function Search() {
                 setHouses(targetHouses);
             })
             .catch((err) => console.log(err));
-    }, [currentPage, searchParam]);
-
-    useEffect(() => {
-        fetch("http://localhost:4000/houses")
-            .then((res) => res.json())
-            .then((data) => {
-                const totalHouses = data.length;
-                setTotalPages(Math.ceil(totalHouses / 4));
-            });
-    }, []);
-
-    const previousPageHandler = () => {
-        setCurrentPage((prev) => prev - 1);
-    };
-    const nextPageHandler = () => {
-        setCurrentPage((prev) => prev + 1);
-    };
+    }, [searchParam]);
 
     return (
         <div className="container">
@@ -55,22 +37,6 @@ function Search() {
                                 </li>
                             ))}
                         </ul>
-                        <div className="home__btns">
-                            <button
-                                disabled={currentPage === 1}
-                                onClick={previousPageHandler}
-                                className="btn"
-                            >
-                                Previous
-                            </button>
-                            <button
-                                disabled={currentPage === totalPages}
-                                onClick={nextPageHandler}
-                                className="btn"
-                            >
-                                Next
-                            </button>
-                        </div>
                     </div>
                 )}
             </div>
