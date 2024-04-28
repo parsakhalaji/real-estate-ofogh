@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../Home/Home.css";
 import { useParams } from "react-router-dom";
+import UserHouseCard from "../../Modules/UserHouseCard/UserHouseCard";
 
 function Home() {
     const [houses, setHouses] = useState([]);
