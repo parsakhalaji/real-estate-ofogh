@@ -39,7 +39,7 @@ function UserSingleHouse() {
             .then((res) => res.json())
             .then((data) => {
                 alert("The house deleted successfully");
-                navigate("/");
+                navigate(`/${userID}/myhouses`);
             })
             .catch((err) => console.log(err));
     };
