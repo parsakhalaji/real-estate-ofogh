@@ -22,17 +22,6 @@
   "houses": [
     {
       "phoneNumber": "09102206148",
-      "address": "satarkhan",
-      "desc": "a house in satarkhan",
-      "location": {
-        "lat": 35.694807014605175,
-        "lng": 51.387090682983406
-      },
-      "userID": 2,
-      "id": 1
-    },
-    {
-      "phoneNumber": "09102206148",
       "address": "shahrara",
       "desc": "a house in shahrara",
       "location": {

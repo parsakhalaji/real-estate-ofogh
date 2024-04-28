@@ -92,6 +92,7 @@ function AddNewHouse() {
                         </button>
                     </form>
                     <div className="addnewhouse__location">
+                        <h3 className="addnewhouse__location-title">Please select the location</h3>
                         <SelectLocation centerLocation={[35.6892, 51.389]} />
                     </div>
                 </div>
