@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import "./NotFound.css";
 
 function NotFound() {
-  return (
-    <h1>NotFound</h1>
-  )
+    return (
+        <div className="container">
+            <h1 className="notfound__title">NOT FOUND :((</h1>
+        </div>
+    );
 }
 
-export default NotFound
+export default NotFound;
