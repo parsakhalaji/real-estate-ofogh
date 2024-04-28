@@ -29,6 +29,11 @@ function Navbar() {
                                     <li className="navbar-menu__item">
                                         Your account: {user.username}
                                     </li>
+                                    <li className="navbar-menu__item">
+                                        <Link to={`/${user.id}/myhouses`}>
+                                            My houses
+                                        </Link>
+                                    </li>
                                 </>
                             ) : (
                                 <>
