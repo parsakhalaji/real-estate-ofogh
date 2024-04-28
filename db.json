@@ -92,6 +92,17 @@
       },
       "userID": 3,
       "id": 6
+    },
+    {
+      "phoneNumber": "09102206148",
+      "address": "enghelab",
+      "desc": "a house in enghelab",
+      "location": {
+        "lat": 35.693273462857455,
+        "lng": 51.39249801635743
+      },
+      "userID": 6,
+      "id": 7
     }
   ]
 }
