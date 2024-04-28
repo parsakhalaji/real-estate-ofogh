@@ -63,6 +63,10 @@ function UserSingleHouse() {
             .catch((err) => console.log(err));
     };
 
+    const handleBackButtonClick = () => {
+        navigate(-1);
+    };
+
     return (
         <div className="container">
             <div className="single-house">
@@ -88,6 +92,9 @@ function UserSingleHouse() {
                     </button>
                     <button onClick={openDeleteConfirmHandler} className="btn">
                         Delete
+                    </button>
+                    <button className="btn" onClick={handleBackButtonClick}>
+                        Back
                     </button>
                 </div>
             </div>
