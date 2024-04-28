@@ -10,6 +10,7 @@ import PrivateRoute from "./privateRoute/PrivateRoute";
 import AddNewHouse from "./Components/Templates/AddNewHouse/AddNewHouse";
 import LocationContext from "./Contexts/Location/LocationContext";
 import SingleHouse from "./Components/Templates/SingleHouse/SingleHouse";
+import UserHouses from "./Components/Templates/UserHouses/UserHouses";
 
 function App() {
     const [user, setUser] = useState(null);
@@ -29,6 +30,14 @@ function App() {
                             element={
                                 <PrivateRoute>
                                     <AddNewHouse />
+                                </PrivateRoute>
+                            }
+                        />
+                        <Route
+                            path="/:userID/myhouses"
+                            element={
+                                <PrivateRoute>
+                                    <UserHouses />
                                 </PrivateRoute>
                             }
                         />
