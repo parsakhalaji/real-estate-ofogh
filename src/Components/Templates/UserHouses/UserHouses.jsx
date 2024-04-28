@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../Home/Home.css";
 import { useParams } from "react-router-dom";
 import UserHouseCard from "../../Modules/UserHouseCard/UserHouseCard";
+import { Link } from "react-router-dom";
 
 function Home() {
     const [houses, setHouses] = useState([]);
@@ -24,7 +25,12 @@ function Home() {
         <div className="container">
             <div className="home">
                 {!houses.length ? (
-                    <h1 className="home__notFound">You have not added any houses yet :((</h1>
+                    <div>
+                        <h1 className="home__notFound">You have not added any houses yet :((</h1>
+                        <button className="btn">
+                            <Link to="/addnewhouse" > Add new house</Link>
+                        </button>
+                    </div>
                 ) : (
                     <div className="home__content">
                         <ul className="home__houses">
