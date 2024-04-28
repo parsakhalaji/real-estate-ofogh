@@ -34,15 +34,14 @@ function AddNewHouse() {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    alert("The house added successfully :))")
+                    alert("The house added successfully :))");
                     console.log(data);
                     navigate("/");
                 })
                 .catch((err) => console.log(err));
         } else {
-            alert ("Please fill all data")
+            alert("Please fill all data");
         }
-
     };
 
     return (
@@ -96,7 +95,9 @@ function AddNewHouse() {
                         </button>
                     </form>
                     <div className="addnewhouse__location">
-                        <h3 className="addnewhouse__location-title">Please select the location</h3>
+                        <h3 className="addnewhouse__location-title">
+                            Please select the location
+                        </h3>
                         <SelectLocation centerLocation={[35.6892, 51.389]} />
                     </div>
                 </div>

@@ -16,7 +16,8 @@ function Search() {
                         house.address
                             .replace(/\s+/g, "-")
                             .includes(searchParam) ||
-                        house.desc.replace(/\s+/g, "-").includes(searchParam)
+                        house.desc.replace(/\s+/g, "-").includes(searchParam) ||
+                        house.address.replace(/\s/g, "").includes(searchParam)
                 );
                 setHouses(targetHouses);
             })
