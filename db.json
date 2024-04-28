@@ -23,6 +23,12 @@
       "password": "$2a$10$ZczoL4CRgD.gKOq.NjoTm.dDnh.5z/1FtuJTXgXWwj/pguMAh781K",
       "username": "mohamad",
       "id": 4
+    },
+    {
+      "email": "hamid@gmail.com",
+      "password": "$2a$10$hyBV6iT/H4Pxh/h39ZeC/.V38bPakEyn9ndCOIr5iEPORo0UP9j.q",
+      "username": "hamid",
+      "id": 5
     }
   ],
   "houses": [

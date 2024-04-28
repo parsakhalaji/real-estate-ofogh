@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import ShowLocation from "../../Modules/Location/ShowLocation";
 import "./SingleHouse.css";
 
 function SingleHouse() {
     const { houseID } = useParams();
     const [currentHouse, setCurrentHouse] = useState(null);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(`http://localhost:4000/houses/${houseID}`)
@@ -16,6 +18,10 @@ function SingleHouse() {
             })
             .catch((err) => console.log(err));
     }, [houseID]);
+
+    const handleBackButtonClick = () => {
+        navigate(-1);
+    };
 
     return (
         <div className="container">
@@ -35,6 +41,11 @@ function SingleHouse() {
                     {currentHouse && (
                         <ShowLocation location={currentHouse.location} />
                     )}
+                </div>
+                <div className="single-house__btns">
+                    <button className="btn" onClick={handleBackButtonClick}>
+                        Back
+                    </button>
                 </div>
             </div>
         </div>
