@@ -1,18 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ShowLocation from "../../Modules/Location/ShowLocation";
 import "./SingleHouse.css";
-import DeleteConfirm from "../../Modules/DeleteConfirm/DeleteConfirm";
-import EditHouseDialog from "../../Modules/EditHouseDialog/EditHouseDialog";
-import LocationContext from "../../../Contexts/Location/LocationContext";
 
 function SingleHouse() {
     const { houseID } = useParams();
     const [currentHouse, setCurrentHouse] = useState(null);
-    const [isDeleteConfirmOpen, setIsDeleteConfirmOpen] = useState(false);
-    const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
-    const { location } = useContext(LocationContext);
-    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(`http://localhost:4000/houses/${houseID}`)
@@ -23,45 +16,6 @@ function SingleHouse() {
             })
             .catch((err) => console.log(err));
     }, [houseID]);
-
-    const openDeleteConfirmHandler = () => {
-        setIsDeleteConfirmOpen(true);
-    };
-
-    const openEditDialogHandler = () => {
-        setIsEditDialogOpen(true);
-    };
-
-    const deleteHouseHandler = () => {
-        fetch(`http://localhost:4000/houses/${houseID}`, {
-            method: "DELETE",
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                alert("The house deleted successfully");
-                navigate("/");
-            })
-            .catch((err) => console.log(err));
-    };
-
-    const editHouseHandler = (e, newHouseData) => {
-        e.preventDefault();
-        // console.log("newHouseData: ", newHouseData);
-        fetch(`http://localhost:4000/houses/${houseID}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ ...newHouseData, location }),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                // console.log(data);
-                alert("The house info updated successfully");
-                navigate("/");
-            })
-            .catch((err) => console.log(err));
-    };
 
     return (
         <div className="container">
@@ -82,28 +36,7 @@ function SingleHouse() {
                         <ShowLocation location={currentHouse.location} />
                     )}
                 </div>
-                <div className="single-house__btns">
-                    <button onClick={openEditDialogHandler} className="btn">
-                        Edit
-                    </button>
-                    <button onClick={openDeleteConfirmHandler} className="btn">
-                        Delete
-                    </button>
-                </div>
             </div>
-            <DeleteConfirm
-                onSubmit={deleteHouseHandler}
-                isOpen={isDeleteConfirmOpen}
-                openBoxHandler={setIsDeleteConfirmOpen}
-            />
-            {currentHouse && (
-                <EditHouseDialog
-                    isOpen={isEditDialogOpen}
-                    onSubmit={editHouseHandler}
-                    openBoxHandler={setIsEditDialogOpen}
-                    initialHouseData={currentHouse}
-                />
-            )}
         </div>
     );
 }
