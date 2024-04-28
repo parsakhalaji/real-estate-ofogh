@@ -13,8 +13,12 @@ function Search() {
         fetch(`http://localhost:4000/houses?_limit=4&_page=${currentPage}`)
             .then((res) => res.json())
             .then((data) => {
-                const targetHouses = data.filter((house) =>
-                    house.address.includes(searchParam)
+                const targetHouses = data.filter(
+                    (house) =>
+                        house.address
+                            .replace(/\s+/g, "-")
+                            .includes(searchParam) ||
+                        house.desc.replace(/\s+/g, "-").includes(searchParam)
                 );
                 setHouses(targetHouses);
             })
