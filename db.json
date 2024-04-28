@@ -22,176 +22,6 @@
   "houses": [
     {
       "phoneNumber": "09102206148",
-      "address": "tabriz",
-      "desc": "a house in tabriz",
-      "location": {
-        "lat": 37.18657859524883,
-        "lng": 51.712646484375
-      },
-      "id": 3
-    },
-    {
-      "phoneNumber": "09217484382",
-      "address": "shiraz",
-      "desc": "a house in shiraz",
-      "location": {
-        "lat": 35.70386830932186,
-        "lng": 51.389665603637695
-      },
-      "id": 5
-    },
-    {
-      "phoneNumber": "09102206148",
-      "address": "tabriz",
-      "desc": "a house in tabriz",
-      "location": {
-        "lat": 35.70386830932186,
-        "lng": 51.389665603637695
-      },
-      "id": 6
-    },
-    {
-      "phoneNumber": "09102206148",
-      "address": "tehran",
-      "desc": "a house",
-      "location": {
-        "lat": 35.70386830932186,
-        "lng": 51.389665603637695
-      },
-      "id": 7
-    },
-    {
-      "phoneNumber": "09217484382",
-      "address": "shiraz",
-      "desc": "a house in shiraz",
-      "location": {
-        "lat": 35.70386830932186,
-        "lng": 51.389665603637695
-      },
-      "id": 8
-    },
-    {
-      "phoneNumber": "09102206148",
-      "address": "tabriz",
-      "desc": "a house in tabriz",
-      "location": {
-        "lat": 35.70386830932186,
-        "lng": 51.389665603637695
-      },
-      "id": 9
-    },
-    {
-      "phoneNumber": "09102206148",
-      "address": "tehran",
-      "desc": "a house",
-      "location": {
-        "lat": 35.70386830932186,
-        "lng": 51.389665603637695
-      },
-      "id": 10
-    },
-    {
-      "phoneNumber": "09217484382",
-      "address": "shiraz",
-      "desc": "a house in shiraz",
-      "location": {
-        "lat": 35.70386830932186,
-        "lng": 51.389665603637695
-      },
-      "id": 11
-    },
-    {
-      "phoneNumber": "09102206148",
-      "address": "tabriz",
-      "desc": "a house in tabriz",
-      "location": {
-        "lat": 35.70386830932186,
-        "lng": 51.389665603637695
-      },
-      "id": 12
-    },
-    {
-      "phoneNumber": "09102206148",
-      "address": "tehran",
-      "desc": "a house",
-      "location": {
-        "lat": 35.70386830932186,
-        "lng": 51.389665603637695
-      },
-      "id": 13
-    },
-    {
-      "phoneNumber": "09217484382",
-      "address": "shiraz",
-      "desc": "a house in shiraz",
-      "location": {
-        "lat": 35.70386830932186,
-        "lng": 51.389665603637695
-      },
-      "id": 14
-    },
-    {
-      "phoneNumber": "09102206148",
-      "address": "tabriz",
-      "desc": "a house in tabriz",
-      "location": {
-        "lat": 35.70386830932186,
-        "lng": 51.389665603637695
-      },
-      "id": 15
-    },
-    {
-      "phoneNumber": "09102206148",
-      "address": "tehran",
-      "desc": "a housesssss",
-      "location": {
-        "lat": 35.70386830932186,
-        "lng": 51.389665603637695
-      },
-      "id": 16
-    },
-    {
-      "phoneNumber": "09217484382",
-      "address": "shiraz",
-      "desc": "a house in shiraz",
-      "location": {
-        "lat": 35.70386830932186,
-        "lng": 51.389665603637695
-      },
-      "id": 17
-    },
-    {
-      "phoneNumber": "09102206148",
-      "address": "tabriz",
-      "desc": "a house in tabriz",
-      "location": {
-        "lat": 35.70386830932186,
-        "lng": 51.389665603637695
-      },
-      "id": 18
-    },
-    {
-      "phoneNumber": "09102206148",
-      "address": "tabriz",
-      "desc": "this is a house in tabriz",
-      "location": {
-        "lat": 35.7335542582977,
-        "lng": 51.396446228027344
-      },
-      "id": 19
-    },
-    {
-      "phoneNumber": "09102206148",
-      "address": "punak",
-      "desc": "this is a house in punak",
-      "location": {
-        "lat": 35.69062453129277,
-        "lng": 51.39464378356934
-      },
-      "id": 20
-    },
-    {
-      "phoneNumber": "09102206148",
       "address": "satarkhan",
       "desc": "a house in satarkhan",
       "location": {
@@ -199,7 +29,7 @@
         "lng": 51.387090682983406
       },
       "userID": 2,
-      "id": 21
+      "id": 1
     },
     {
       "phoneNumber": "09102206148",
@@ -210,7 +40,18 @@
         "lng": 51.380631923675544
       },
       "userID": 3,
-      "id": 22
+      "id": 2
+    },
+    {
+      "phoneNumber": "09102206148",
+      "address": "tehran vila",
+      "desc": "a house in tehran vila",
+      "location": {
+        "lat": 35.71529801212532,
+        "lng": 51.39086723327637
+      },
+      "userID": 2,
+      "id": 3
     }
   ]
 }
