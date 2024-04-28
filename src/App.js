@@ -42,6 +42,14 @@ function App() {
                             }
                         />
                         <Route
+                            path="/:userID/myhouses/:userHouseID"
+                            element={
+                                <PrivateRoute>
+                                    <UserSingleHouse />
+                                </PrivateRoute>
+                            }
+                        />
+                        <Route
                             path="/houses/:houseID"
                             element={<SingleHouse />}
                         />
