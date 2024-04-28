@@ -7,7 +7,7 @@ import EditHouseDialog from "../../Modules/EditHouseDialog/EditHouseDialog";
 import LocationContext from "../../../Contexts/Location/LocationContext";
 
 function UserSingleHouse() {
-    const { userHouseID } = useParams();
+    const { userHouseID, userID } = useParams();
     const [currentHouse, setCurrentHouse] = useState(null);
     const [isDeleteConfirmOpen, setIsDeleteConfirmOpen] = useState(false);
     const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
@@ -58,7 +58,7 @@ function UserSingleHouse() {
             .then((data) => {
                 // console.log(data);
                 alert("The house info updated successfully");
-                navigate("/");
+                navigate(`/${userID}/myhouses`);
             })
             .catch((err) => console.log(err));
     };
