@@ -3,11 +3,13 @@ import SelectLocation from "../../Modules/Location/SelectLocation";
 import "./AddNewHouse.css";
 import LocationContext from "../../../Contexts/Location/LocationContext";
 import { useNavigate } from "react-router-dom";
+import UserContext from "../../../Contexts/User/UserContext";
 
 function AddNewHouse() {
     const [phoneNumber, setPhoneNumber] = useState("");
     const [address, setAddress] = useState("");
     const [desc, setDesc] = useState("");
+    const { user, setUser } = useContext(UserContext);
 
     const { location } = useContext(LocationContext);
 
@@ -16,7 +18,13 @@ function AddNewHouse() {
     const addNewHouseSubmitHandler = (e) => {
         e.preventDefault();
         if (phoneNumber && address && desc && location) {
-            const newHouse = { phoneNumber, address, desc, location };
+            const newHouse = {
+                phoneNumber,
+                address,
+                desc,
+                location,
+                userID: user.id,
+            };
             fetch("http://localhost:4000/houses", {
                 method: "POST",
                 headers: {
