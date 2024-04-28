@@ -11,6 +11,7 @@ import AddNewHouse from "./Components/Templates/AddNewHouse/AddNewHouse";
 import LocationContext from "./Contexts/Location/LocationContext";
 import SingleHouse from "./Components/Templates/SingleHouse/SingleHouse";
 import UserHouses from "./Components/Templates/UserHouses/UserHouses";
+import UserSingleHouse from "./Components/Templates/UserSingleHouse/UserSingleHouse";
 
 function App() {
     const [user, setUser] = useState(null);
