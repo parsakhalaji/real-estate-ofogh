@@ -15,6 +15,15 @@ function Navbar() {
                             <li className="navbar-menu__item">
                                 <Link to="/">Home page</Link>
                             </li>
+                            <li className="navbar-menu__item">
+                                <form className="navbar__search">
+                                    <input
+                                        className="navbar__input"
+                                        placeholder="Type to search ..."
+                                        type="text"
+                                    />
+                                </form>
+                            </li>
                         </ul>
                     </div>
                     <div className="navbar__right">
