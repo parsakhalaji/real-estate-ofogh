@@ -54,6 +54,10 @@ function App() {
                             path="/houses/:houseID"
                             element={<SingleHouse />}
                         />
+                        <Route
+                            path="/search/:searchParam"
+                            element={<h1>Search page</h1>}
+                        />
                     </Routes>
                 </UserContext.Provider>
             </LocationContext.Provider>
