@@ -19,3 +19,9 @@
 .house-card__address {
     padding: 1rem;    
 }
+
+@media screen and (max-width: 450px) {
+    .house-card {
+        width: 28rem;
+    }
+}
