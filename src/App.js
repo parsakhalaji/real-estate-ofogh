@@ -13,6 +13,7 @@ import SingleHouse from "./Components/Templates/SingleHouse/SingleHouse";
 import UserHouses from "./Components/Templates/UserHouses/UserHouses";
 import UserSingleHouse from "./Components/Templates/UserSingleHouse/UserSingleHouse";
 import Search from "./Components/Templates/Search/Search";
+import NotFound from "./Components/Templates/NotFound/NotFound";
 
 function App() {
     const [user, setUser] = useState(null);
@@ -59,6 +60,7 @@ function App() {
                             path="/search/:searchParam"
                             element={<Search />}
                         />
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
                 </UserContext.Provider>
             </LocationContext.Provider>
