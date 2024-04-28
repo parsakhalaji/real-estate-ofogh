@@ -15,6 +15,7 @@
     justify-content: space-between;
     align-items: start;
     gap: 1rem;
+    order: 99;
 }
 .addnewhouse__label {
     display: flex;
