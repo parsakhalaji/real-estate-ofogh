@@ -8,7 +8,7 @@ function HouseCard({ data }) {
             <div className="house-card">
                 <div className="house-card__img-container">
                     <img
-                        src="./Images/house.jpeg"
+                        src="https://raw.githubusercontent.com/parsakhalaji/real-estate-ofogh/main/public/Images/house.jpeg"
                         alt=""
                         className="house-card__img"
                     />

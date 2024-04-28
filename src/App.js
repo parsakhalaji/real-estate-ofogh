@@ -12,6 +12,7 @@ import LocationContext from "./Contexts/Location/LocationContext";
 import SingleHouse from "./Components/Templates/SingleHouse/SingleHouse";
 import UserHouses from "./Components/Templates/UserHouses/UserHouses";
 import UserSingleHouse from "./Components/Templates/UserSingleHouse/UserSingleHouse";
+import Search from "./Components/Templates/Search/Search";
 
 function App() {
     const [user, setUser] = useState(null);
@@ -56,7 +57,7 @@ function App() {
                         />
                         <Route
                             path="/search/:searchParam"
-                            element={<h1>Search page</h1>}
+                            element={<Search />}
                         />
                     </Routes>
                 </UserContext.Provider>
