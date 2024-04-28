@@ -25,10 +25,13 @@ function Login() {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-                navigate("/");
-                setUser(data.user);
-                setEmail("");
-                setPassword("");
+                if (typeof data === "string") {
+                    alert(data);
+                } else {
+                    setUser(data.user);
+                    alert("you have signed in successfully");
+                    navigate("/");
+                }
             })
             .catch((error) => console.log(error));
     };
