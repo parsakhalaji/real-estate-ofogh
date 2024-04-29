@@ -4,7 +4,7 @@ import "./Navbar.css";
 import UserContext from "../../../Contexts/User/UserContext";
 
 function Navbar() {
-    const { user } = useContext(UserContext);
+    const { user, setUser } = useContext(UserContext);
     const [searchQuery, setSearchQuery] = useState("");
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State to track menu visibility
     const navigate = useNavigate();
@@ -30,6 +30,13 @@ function Navbar() {
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+    };
+
+    const logOutHandler = () => {
+        localStorage.removeItem("accessToken");
+        setUser(null);
+        navigate("/login");
+        closeMenu();
     };
 
     return (
@@ -89,6 +96,17 @@ function Navbar() {
                                             <Link to={`/${user.id}/myhouses`}>
                                                 My houses
                                             </Link>
+                                        </li>
+                                        <li
+                                            onClick={closeMenu}
+                                            className="navbar-menu__item"
+                                        >
+                                            <button
+                                                onClick={logOutHandler}
+                                                className="btn"
+                                            >
+                                                Log out
+                                            </button>
                                         </li>
                                     </>
                                 ) : (
