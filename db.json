@@ -41,6 +41,12 @@
       "password": "$2a$10$XFefRSM1cwMtEHFAEGMpe.CpbA4pwcbxmI.pIC4MyU5aj8ZKA0/HC",
       "username": "amir",
       "id": 7
+    },
+    {
+      "email": "babak@gmail.com",
+      "password": "$2a$10$xcqSYRqf.FTNxxbWo8WILOM5RKh5b1mLJg1sjnybPHdkp50HDStR6",
+      "username": "babak",
+      "id": 8
     }
   ],
   "houses": [
@@ -109,6 +115,17 @@
       },
       "userID": 6,
       "id": 7
+    },
+    {
+      "phoneNumber": "09102206148",
+      "address": "sadeghie",
+      "desc": "a house in sadeghie",
+      "location": {
+        "lat": 35.72143034768091,
+        "lng": 51.33190155029297
+      },
+      "userID": 8,
+      "id": 8
     }
   ]
 }

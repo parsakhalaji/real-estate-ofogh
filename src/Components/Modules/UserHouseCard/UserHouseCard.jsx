@@ -10,7 +10,7 @@ function UserHouseCard({ data }) {
             <div className="house-card">
                 <div className="house-card__img-container">
                     <img
-                        src="https://raw.githubusercontent.com/parsakhalaji/real-estate-ofogh/main/public/Images/house.jpeg"
+                        src="/Images/house.jpeg"
                         alt=""
                         className="house-card__img"
                     />

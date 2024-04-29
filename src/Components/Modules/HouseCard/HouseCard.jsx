@@ -6,9 +6,9 @@ function HouseCard({ data }) {
     return (
         <Link to={`/houses/${data.id}`}>
             <div className="house-card">
-                <div className="house-card__img-container">
+            <div className="house-card__img-container">
                     <img
-                        src="https://raw.githubusercontent.com/parsakhalaji/real-estate-ofogh/main/public/Images/house.jpeg"
+                        src="/Images/house.jpeg"
                         alt=""
                         className="house-card__img"
                     />
