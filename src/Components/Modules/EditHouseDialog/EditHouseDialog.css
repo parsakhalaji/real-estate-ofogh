@@ -10,7 +10,7 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 .editdialog__wrapper {
-    background-color: #ccae62;
+    background-color: #dcdde1;
     padding: 3rem;
     border-radius: 5px;
     display: flex;
@@ -68,7 +68,6 @@
         background: none;
     }
     .editdialog__wrapper {
-        background-color: #ccae62;
         padding: 0;
         border-radius: 0;
         display: flex;

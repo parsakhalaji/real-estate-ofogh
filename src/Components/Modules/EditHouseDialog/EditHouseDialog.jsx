@@ -86,7 +86,7 @@ function EditHouseDialog({
                                         onChange={handleInputChange}
                                     />
                                 </label>
-                                <button type="submit" className="btn">
+                                <button type="submit" className="btn edit-btn">
                                     Submit
                                 </button>
                             </form>

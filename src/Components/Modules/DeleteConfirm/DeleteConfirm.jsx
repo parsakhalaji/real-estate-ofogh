@@ -17,7 +17,7 @@ function DeleteConfirm({ isOpen, openBoxHandler, onSubmit }) {
                     Are you sure to delete this house?
                 </h2>
                 <div className="deletebox__btns">
-                    <button onClick={onSubmit} className="btn">
+                    <button onClick={onSubmit} className="btn delete-btn">
                         Yes, Delete
                     </button>
                     <button onClick={closeBoxHandler} className="btn">

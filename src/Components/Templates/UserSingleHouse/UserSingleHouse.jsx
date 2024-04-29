@@ -87,10 +87,10 @@ function UserSingleHouse() {
                     )}
                 </div>
                 <div className="single-house__btns">
-                    <button onClick={openEditDialogHandler} className="btn">
+                    <button onClick={openEditDialogHandler} className="btn edit-btn">
                         Edit
                     </button>
-                    <button onClick={openDeleteConfirmHandler} className="btn">
+                    <button onClick={openDeleteConfirmHandler} className="btn delete-btn">
                         Delete
                     </button>
                     <button className="btn" onClick={handleBackButtonClick}>

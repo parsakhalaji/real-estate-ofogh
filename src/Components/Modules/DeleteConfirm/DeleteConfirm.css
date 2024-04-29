@@ -10,7 +10,7 @@
     background-color: rgba(0, 0, 0, .5);
 }
 .deletebox__wrapper {
-    background-color: rgb(187, 73, 84);
+    background-color: #dcdde1;
     padding: 3rem;
     border-radius: 5px;
     display: flex;
