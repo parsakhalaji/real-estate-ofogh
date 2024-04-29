@@ -5,7 +5,7 @@ import Login from "./Components/Templates/Login/Login";
 import Signup from "./Components/Templates/Signup/Signup";
 import Navbar from "./Components/Modules/Navbar/Navbar";
 import UserContext from "./Contexts/User/UserContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PrivateRoute from "./privateRoute/PrivateRoute";
 import AddNewHouse from "./Components/Templates/AddNewHouse/AddNewHouse";
 import LocationContext from "./Contexts/Location/LocationContext";
@@ -15,9 +15,35 @@ import UserSingleHouse from "./Components/Templates/UserSingleHouse/UserSingleHo
 import Search from "./Components/Templates/Search/Search";
 import NotFound from "./Components/Templates/NotFound/NotFound";
 
+import decodeToken from "./utils/decode";
+
 function App() {
     const [user, setUser] = useState(null);
     const [location, setLocation] = useState(null);
+
+    useEffect(() => {
+        const token = localStorage.getItem("accessToken");
+        if (token) {
+            const userDetails = decodeToken(token);
+            if (userDetails && userDetails.exp * 1000 > Date.now()) {
+                fetch(`http://localhost:4000/users?email=${userDetails.email}`)
+                    .then((res) => res.json())
+                    .then((users) => {
+                        const currentUser = users[0];
+                        if (currentUser) {
+                            setUser(currentUser);
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("error", error);
+                        setUser(null);
+                    });
+            } else {
+                localStorage.removeItem("accessToken");
+                setUser(null);
+            }
+        }
+    }, []);
 
     return (
         <>
