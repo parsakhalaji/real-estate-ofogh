@@ -24,13 +24,17 @@ function Login() {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
-                if (typeof data === "string") {
+                if (data.accessToken) {
+                    console.log(data.accessToken);
+                    localStorage.setItem("accessToken", data.accessToken);
+
+                    if (data.user) {
+                        setUser(data.user);
+                        alert("You have signed in successfully");
+                        navigate("/");
+                    }
+                } else if (typeof data === "string") {
                     alert(data);
-                } else {
-                    setUser(data.user);
-                    alert("you have signed in successfully");
-                    navigate("/");
                 }
             })
             .catch((error) => console.log(error));

@@ -35,6 +35,12 @@
       "password": "$2a$10$.DmaevNP25.c/wsnFMYYZuhabffSQpKJmksG7udzdkKb3NcW9gZOG",
       "username": "amin",
       "id": 6
+    },
+    {
+      "email": "amir@gmail.com",
+      "password": "$2a$10$XFefRSM1cwMtEHFAEGMpe.CpbA4pwcbxmI.pIC4MyU5aj8ZKA0/HC",
+      "username": "amir",
+      "id": 7
     }
   ],
   "houses": [
