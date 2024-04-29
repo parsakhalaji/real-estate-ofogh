@@ -53,6 +53,7 @@ function Signup() {
                                 id="username"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
+                                required
                             />
                         </label>
                         <label className="signup__label" htmlFor="email">
